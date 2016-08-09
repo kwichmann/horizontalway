@@ -1,4 +1,20 @@
-slider {
+body {
+	background-color: #333333;
+}
+
+div {
+	text-align: center;
+}
+
+h1 {
+	color: lightgray;
+}
+
+h2 {
+	color: white;
+}
+
+input {
 	margin: 8px;
 	padding: 4px;
 }
