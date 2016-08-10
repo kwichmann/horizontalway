@@ -60,6 +60,7 @@ function setup() {
   generateButton.mousePressed(generate);
   
   distanceRadio = createRadio();
+  distanceRadio.parent(generateDiv);
   distanceRadio.option('Adjacent strings', 5);
   distanceRadio.option('At most two strings apart', 9);
   distanceRadio.option('At most three strings apart', 12);

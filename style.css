@@ -24,6 +24,6 @@ select {
 	padding: 4px;
 }
 
-#distanceRadio {
-	align: left;
+#credits {
+	font-size: 7pt;
 }
