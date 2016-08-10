@@ -21,6 +21,18 @@ var scales = [
     family: 'Harmonic major family',
     notes:  [0, 2, 4, 5, 7, 8, 11],
     modes:  ['Harmonic major', 'Dorian b5', 'Phrygian b4', 'Lydian b3', 'Mixolydian b2', 'Lydian #2, #5', 'Locrian bb7']
+  },
+  
+  {
+    family: 'Pantuvarali',
+    notes:  [0, 1, 4, 6, 7, 8, 11],
+    modes:  ['Pantuvarali', '2nd mode', '3rd mode (from OK)', '4th mode', '5th mode', '6th mode', '7th mode']
+  },
+  
+  {
+    family: 'Suryakantham',
+    notes:  [0, 1, 4, 5, 7, 9, 11],
+    modes:  ['Suryakantham', '2nd mode', '3rd mode', '4th mode', '5th mode', '6th mode (from Big Machine)', '7th mode']
   }
 ];
 

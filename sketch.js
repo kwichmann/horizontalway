@@ -89,7 +89,10 @@ function newModes() {
 }
 
 function generate() {
+  nRoot = floor(random(0, 13));
+  // document.getElementById("rootSel").value = nRoot;
   
+  setName();
 }
 
 function draw() {
