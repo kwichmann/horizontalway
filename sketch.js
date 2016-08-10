@@ -59,8 +59,14 @@ function setup() {
   generateButton = select('#generateButton');
   generateButton.mousePressed(generate);
   
-  distanceRadio = select('#distanceRadio');
-
+  distanceRadio = createRadio();
+  distanceRadio.option('Adjacent strings', 5);
+  distanceRadio.option('At most two strings apart', 9);
+  distanceRadio.option('At most three strings apart', 12);
+  distanceRadio.option('At most four strings apart', 14);
+  distanceRadio.option('Any', 15);
+  distanceRadio.value(5);
+  
   setName();
 
   colorMode(HSB);
@@ -89,8 +95,17 @@ function newModes() {
 }
 
 function generate() {
-  nRoot = floor(random(0, 13));
-  // document.getElementById("rootSel").value = nRoot;
+  nRoot = floor(random(0, 12));
+  rootSel.value(nRoot);
+  
+  nMode = floor(random(0, 7));
+  modeSel.value(nMode);
+  
+  nInterval = floor(random(1, 6));
+  intervalSel.value(nInterval);
+  
+  nStrings = floor(random(0, distanceRadio.value()));
+  stringsSel.value(nStrings);
   
   setName();
 }
