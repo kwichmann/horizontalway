@@ -9,27 +9,25 @@ var stringsSel;
 var generateButton;
 var distanceRadio;
 
-var nameDiv;
 var h2;
 var canvasDiv;
 var canvas;
 var inputDiv;
+var generateDiv;
 
 function preload() {
   fretboard = loadImage("images/fretboard_760.png");
 }
 
 function setup() {
+  h2 = select('#h2');
+  canvasDiv = select('#canvasDiv');
+  inputDiv = select('#inputDiv');
+  generateDiv = select('#generateDiv');  
   
-  nameDiv = createDiv('');
-  h2 = createElement('h2', '');
-  h2.parent(nameDiv);
-  
-  canvasDiv = createDiv('');
-  canvas = createCanvas(760, 72);
+  canvas = createCanvas(760, 76);
   canvas.parent(canvasDiv);
   
-  inputDiv = createDiv('');
   rootSel = createSlider(0, 11, 3, 1);
   rootSel.parent(inputDiv);
   rootSel.input(setName);
@@ -58,17 +56,11 @@ function setup() {
     stringsSel.option(pairs[i][0] + ' and ' + pairs[i][1], i);
   }
 
-  generateButton = createButton('Generate random');
+  generateButton = select('#generateButton');
   generateButton.mousePressed(generate);
   
-  distanceRadio = createRadio();
-  distanceRadio.style('display', 'inline-block');
-  distanceRadio.option('Adjacent strings', 4);
-  distanceRadio.option('At most two strings apart', 8);
-  distanceRadio.option('At most three strings apart', 11);
-  distanceRadio.option('At most four strings apart', 13);
-  distanceRadio.option('Any distance', 14);
-  
+  distanceRadio = select('#distanceRadio');
+
   setName();
 
   colorMode(HSB);
