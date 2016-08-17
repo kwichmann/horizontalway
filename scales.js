@@ -26,7 +26,7 @@ var scales = [
   {
     family: 'Pantuvarali',
     notes:  [0, 1, 4, 6, 7, 8, 11],
-    modes:  ['Pantuvarali', '2nd mode', '3rd mode (from OK)', '4th mode', '5th mode', '6th mode', '7th mode']
+    modes:  ['Pantuvarali', 'Seven tone blues scale', '3rd mode (from OK)', '4th mode', '5th mode', '6th mode', '7th mode']
   },
   
   {
