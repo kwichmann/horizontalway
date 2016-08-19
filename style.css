@@ -14,12 +14,17 @@ h2 {
 	color: white;
 }
 
-form {
+select {
 	margin: 8px;
 	padding: 4px;
 }
 
-select {
+input {
+	margin: 8px;
+	padding: 4px;
+}
+
+button {
 	margin: 8px;
 	padding: 4px;
 }
