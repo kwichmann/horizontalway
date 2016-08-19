@@ -6,6 +6,11 @@ var modeSel;
 var intervalSel;
 var stringsSel;
 
+var playButton;
+var stopButton;
+var volSlider;
+var loadCow;
+
 var generateButton;
 var distanceRadio;
 
@@ -13,7 +18,10 @@ var h2;
 var canvasDiv;
 var canvas;
 var inputDiv;
+var playDiv;
 var generateDiv;
+
+var drones = [];
 
 function preload() {
   fretboard = loadImage("images/fretboard_760.png");
@@ -23,6 +31,7 @@ function setup() {
   h2 = select('#h2');
   canvasDiv = select('#canvasDiv');
   inputDiv = select('#inputDiv');
+  playDiv = select('#playDiv');
   generateDiv = select('#generateDiv');  
   
   canvas = createCanvas(760, 76);
@@ -30,7 +39,7 @@ function setup() {
   
   rootSel = createSlider(0, 11, 3, 1);
   rootSel.parent(inputDiv);
-  rootSel.input(setName);
+  rootSel.input(nRoot);
   
   familySel = createSelect();
   familySel.parent(inputDiv);
@@ -56,6 +65,18 @@ function setup() {
     stringsSel.option(pairs[i][0] + ' and ' + pairs[i][1], i);
   }
 
+  playButton = createButton('Play');
+  playButton.parent(playDiv);
+  playButton.mousePressed(playDrone);
+  stopButton = createButton('Stop');
+  stopButton.parent(playDiv);
+  stopButton.mousePressed(stopDrone);
+  volSlider = createSlider(0, 1, 0.5, 0.01);
+  volSlider.parent(playDiv);
+  loadCow = createImg('images/freak_cow.png');
+  loadCow.style('width', '50px');
+  loadCow.parent(playDiv);
+
   generateButton = select('#generateButton');
   generateButton.mousePressed(generate);
   
@@ -73,6 +94,11 @@ function setup() {
   colorMode(HSB);
   strokeWeight(2);
   
+}
+
+function nRoot() {
+  setName();
+  stopDrone();
 }
 
 function setName() {
@@ -109,6 +135,7 @@ function generate() {
   stringsSel.value(nStrings);
   
   setName();
+  stopDrone();
 }
 
 function draw() {
@@ -117,6 +144,9 @@ function draw() {
   
   drawScale(pairs[stringsSel.value()][0], intervalSel.value());
   drawScale(pairs[stringsSel.value()][1], 0);
+  
+  setVol();
+  setCow();
 }
 
 function dot(string, fret, hu, root) {

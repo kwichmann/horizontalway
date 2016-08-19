@@ -10,16 +10,24 @@
 
     <script src="sketch.js" type="text/javascript"></script>
     <script src="scales.js" type="text/javascript"></script>
+    <script src="drones.js" type="text/javascript"></script>
 
     <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div><h1>The Horizontal Way</h1></div>
+    
     <div><h2 id="h2"></h2></div>
+    
     <div id="canvasDiv"></div>
+    
     <div><h3>Choose root, scale family, mode, interval and string pair:</h3></div>
     <div id="inputDiv"></div>
+    
+    <div><h3>Backing drone</h3></div>
+    <div id="playDiv"></div>
+    
     <div><h3>Click to generate a random exercise within the scale family:</h3></div>
     <div id="generateDiv">
       <p><button type="button" id="generateButton">Generate random</button></p>
@@ -30,7 +38,8 @@
     <div id="credits">
       <p>Made by <a href="https://github.com/kwichmann">Kristian Wichmann</a></p>
       <p>Inspired by <a href="http://www.freakguitar.com/">Mattias IA Eklundh</a> and <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">Dan Shiffman</a>.</p>
-      <p>Made using <a href="http://p5js.org/">p5.js</a>. Image adopted from <a href="https://en.wikipedia.org/wiki/Inlay_(guitar)">wikipedia</a>. 
+      <p>Made using <a href="http://p5js.org/">p5.js</a>. Image adopted from <a href="https://en.wikipedia.org/wiki/Inlay_(guitar)">wikipedia</a>.
+      Drones by <a href="http://www.freakguitar.com/">Mattias IA Eklundh</a>.
     </div>
   </body>
 </html>
